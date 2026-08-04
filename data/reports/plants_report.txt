@@ -1,0 +1,101 @@
+=== ALL PLANTS REPORT ===
+
+=== PLANT REPORT ===
+ID: 1
+Name: Tommy
+Species: Tomato
+Status: HEALTHY
+Health: 87.0%
+Growth: 65.0%
+Zone ID: 1
+Care: Ensure deep watering and harvest immediately when mature.
+
+------------------
+=== PLANT REPORT ===
+ID: 2
+Name: Lettie
+Species: Lettuce
+Status: NEEDS_ATTENTION
+Health: 76.0%
+Growth: 54.0%
+Zone ID: 1
+Care: Ensure deep watering and harvest immediately when mature.
+
+------------------
+=== PLANT REPORT ===
+ID: 3
+Name: Rosey
+Species: Rose
+Status: HEALTHY
+Health: 92.0%
+Growth: 72.0%
+Zone ID: 2
+Care: Deadhead spent blooms regularly to encourage new growth.
+
+------------------
+=== PLANT REPORT ===
+ID: 4
+Name: Berry
+Species: Strawberry
+Status: HEALTHY
+Health: 100.0%
+Growth: 20.0%
+Zone ID: 1
+Care: Prune annually and ensure adequate sunlight for proper fruit ripening.
+
+------------------
+=== PLANT REPORT ===
+ID: 5
+Name: Sunny
+Species: Sunflower
+Status: HEALTHY
+Health: 85.0%
+Growth: 40.0%
+Zone ID: 2
+Care: Deadhead spent blooms regularly to encourage new growth.
+
+------------------
+=== PLANT REPORT ===
+ID: 6
+Name: Persistence Potato
+Species: Potato
+Status: HEALTHY
+Health: 100.0%
+Growth: 0.0%
+Zone ID: 1
+Care: Ensure deep watering and harvest immediately when mature.
+
+------------------
+=== PLANT REPORT ===
+ID: 7
+Name: Persistence Potato
+Species: Potato
+Status: HEALTHY
+Health: 100.0%
+Growth: 0.0%
+Zone ID: 1
+Care: Ensure deep watering and harvest immediately when mature.
+
+------------------
+=== PLANT REPORT ===
+ID: 9
+Name: Mango
+Species: Fruit
+Status: HEALTHY
+Health: 100.0%
+Growth: 80.0%
+Zone ID: 1
+Care: Prune annually and ensure adequate sunlight for proper fruit ripening.
+
+------------------
+=== PLANT REPORT ===
+ID: 10
+Name: Persistence Potato
+Species: Potato
+Status: HEALTHY
+Health: 100.0%
+Growth: 0.0%
+Zone ID: 1
+Care: Ensure deep watering and harvest immediately when mature.
+
+------------------

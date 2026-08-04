@@ -1,0 +1,2 @@
+simulationSpeed=1.0
+theme=LIGHT

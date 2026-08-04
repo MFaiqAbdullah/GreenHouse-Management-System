@@ -1,0 +1,2 @@
+id,message,type,severity,resolved
+1,Plant Sunny is in CRITICAL condition!,PLANT_HEALTH,CRITICAL,false
