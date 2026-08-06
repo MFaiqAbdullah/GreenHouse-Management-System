@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.MainShellController" prefHeight="700.0" prefWidth="1000.0">
+    <left>
+        <VBox spacing="10.0" styleClass="sidebar" prefWidth="200.0">
+            <padding>
+                <Insets top="20.0" bottom="20.0" left="10.0" right="10.0"/>
+            </padding>
+            <Label fx:id="roleLabel" styleClass="role-label" text="Role"/>
+            <Separator/>
+            
+            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Plants" onAction="#showPlants" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Zones" onAction="#showZones" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Sensors" onAction="#showSensors" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Irrigation" onAction="#showIrrigation" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Resources" onAction="#showResources" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Alerts" onAction="#showAlerts" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Reports" onAction="#showReports" maxWidth="Infinity" styleClass="nav-button"/>
+            
+            <Button fx:id="usersButton" onAction="#showUsers" text="Users" maxWidth="Infinity" styleClass="nav-button"/>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            <Separator/>
+            <Button text="Logout" onAction="#handleLogout" maxWidth="Infinity" styleClass="nav-button, logout-button"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+            <!-- Sub-views loaded here -->
+        </StackPane>
+    </center>
+</BorderPane>
