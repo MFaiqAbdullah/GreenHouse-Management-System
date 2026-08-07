@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.PlantsController" prefHeight="700.0" prefWidth="800.0">
+    <top>
+        <VBox spacing="10.0">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Plant Management" styleClass="header-label"/>
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search by name..."/>
+                <ComboBox fx:id="typeFilter" promptText="Any Type"/>
+                <ComboBox fx:id="zoneFilter" promptText="Any Zone"/>
+                <ComboBox fx:id="statusFilter" promptText="Any Status"/>
+                <Button text="Clear Filters" onAction="#handleClearFilters"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="plantsTable">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn" prefWidth="50">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Name" fx:id="nameColumn" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Species" fx:id="speciesColumn" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="species"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Type" fx:id="typeColumn" prefWidth="100"/>
+                <TableColumn text="Health" fx:id="healthColumn" prefWidth="70">
+                    <cellValueFactory><PropertyValueFactory property="health"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Zone ID" fx:id="zoneColumn" prefWidth="70">
+                    <cellValueFactory><PropertyValueFactory property="zoneId"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Status" fx:id="statusColumn" prefWidth="120">
+                    <cellValueFactory><PropertyValueFactory property="status"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Button text="Add Plant" onAction="#handleAddPlant" styleClass="primary-button"/>
+            <Button text="Edit Selected" onAction="#handleEditPlant"/>
+            <Button text="Delete Selected" onAction="#handleDeletePlant" textFill="RED"/>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox fx:id="formPane" visible="false" managed="false" prefWidth="250" spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label fx:id="formTitle" text="Add/Edit Plant" styleClass="section-label"/>
+            <TextField fx:id="fName" promptText="Name"/>
+            <TextField fx:id="fSpecies" promptText="Species"/>
+            <ComboBox fx:id="fType" promptText="Type (VEGETABLE, FLOWER, FRUIT)"/>
+            <TextField fx:id="fHealth" promptText="Health (0-100)"/>
+            <TextField fx:id="fGrowth" promptText="Growth (0-100)"/>
+            <TextField fx:id="fWater" promptText="Water Req"/>
+            <TextField fx:id="fTemp" promptText="Ideal Temp"/>
+            <TextField fx:id="fHum" promptText="Ideal Humidity"/>
+            <ComboBox fx:id="fZone" promptText="Zone ID"/>
+            <Label fx:id="formError" textFill="RED" wrapText="true"/>
+            <HBox spacing="10">
+                <Button text="Save" onAction="#handleSaveForm" styleClass="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancelForm"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
