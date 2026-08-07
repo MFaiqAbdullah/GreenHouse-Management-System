@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.DashboardController" styleClass="dashboard-container">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <Label text="Dashboard Overview" styleClass="header-label"/>
+    
+    <HBox spacing="15.0">
+        <VBox styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Total Plants" styleClass="card-title"/>
+            <Label fx:id="totalPlantsLabel" styleClass="card-value"/>
+        </VBox>
+        <VBox styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Healthy Plants" styleClass="card-title"/>
+            <Label fx:id="healthyPlantsLabel" styleClass="card-value"/>
+        </VBox>
+        <VBox styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Active Alerts" styleClass="card-title"/>
+            <Label fx:id="activeAlertsLabel" styleClass="card-value"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="15.0">
+        <VBox styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Current State" styleClass="card-title"/>
+            <GridPane hgap="10" vgap="5">
+                <Label text="Temp:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="tempLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <Label text="Humidity:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="humidityLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                
+                <Label text="Water Level:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="waterLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </VBox>
+
+        <VBox styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Live System Status" styleClass="card-title"/>
+            <GridPane hgap="10" vgap="5">
+                <Label text="Sensor Monitoring:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="sensorStatus" text="STOPPED" textFill="GRAY" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                
+                <Label text="Irrigation:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="irrigationStatus" text="STOPPED" textFill="GRAY" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                
+                <Label text="Plant Growth:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="plantStatus" text="STOPPED" textFill="GRAY" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="15.0" alignment="CENTER_LEFT">
+        <Label text="Simulation Controls:" styleClass="section-label"/>
+        <Button text="Start Simulation" onAction="#startSimulation" styleClass="primary-button"/>
+        <Button text="Pause Simulation" onAction="#stopSimulation"/>
+    </HBox>
+
+    <Label text="Zones" styleClass="section-label"/>
+    <FlowPane fx:id="zonesPane" hgap="15" vgap="15"/>
+</VBox>
