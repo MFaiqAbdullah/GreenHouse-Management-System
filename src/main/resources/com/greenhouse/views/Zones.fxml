@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<SplitPane dividerPositions="0.4" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.ZonesController" prefHeight="700.0" prefWidth="800.0">
+    <items>
+        <VBox spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Zones" styleClass="header-label"/>
+            <ListView fx:id="zonesList" VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <VBox spacing="15" fx:id="detailPane" visible="false">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label fx:id="detailName" styleClass="header-label"/>
+            <Label fx:id="detailDesc" wrapText="true"/>
+            
+            <Label text="Environmental Readings (Static from State)" styleClass="section-label"/>
+            <GridPane hgap="10" vgap="5">
+                <Label text="Temperature:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="lblTemp" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Humidity:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="lblHum" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Soil Moisture:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="lblSoil" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+
+            <Label text="Irrigation Control" styleClass="section-label"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Status:"/>
+                <Label fx:id="irrigationStatus" styleClass="card-title"/>
+                <Button text="Start" onAction="#handleStartIrrigation" styleClass="primary-button"/>
+                <Button text="Stop" onAction="#handleStopIrrigation"/>
+            </HBox>
+
+            <Label text="Plants in Zone" styleClass="section-label"/>
+            <ListView fx:id="zonePlantsList" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </items>
+</SplitPane>
