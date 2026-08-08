@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.ResourcesController" prefHeight="700.0" prefWidth="800.0">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Resource Inventory" styleClass="header-label"/>
+    
+    <VBox fx:id="resourceContainer" spacing="15"/>
+    
+    <VBox fx:id="adminControls" spacing="10" visible="false" managed="false">
+        <Label text="Add Stock (Admin Only)" styleClass="section-label"/>
+        <HBox spacing="10">
+            <ComboBox fx:id="typeCombo" promptText="Select Resource"/>
+            <TextField fx:id="amountField" promptText="Amount"/>
+            <Button text="Add Stock" onAction="#handleAddStock" styleClass="primary-button"/>
+        </HBox>
+        <Label fx:id="errorLabel" textFill="RED" visible="false"/>
+    </VBox>
+</VBox>
