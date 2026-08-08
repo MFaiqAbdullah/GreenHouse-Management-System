@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.ReportsController" prefHeight="700.0" prefWidth="800.0">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Reports Generation" styleClass="header-label"/>
+    
+    <HBox spacing="10">
+        <Button text="Generate Greenhouse Report" onAction="#genGreenhouse"/>
+        <Button text="Generate Resource Report" onAction="#genResources"/>
+        <Button text="Generate Plants Report" onAction="#genPlants"/>
+    </HBox>
+
+    <Label text="Report Preview:" styleClass="section-label"/>
+    <TextArea fx:id="reportPreview" VBox.vgrow="ALWAYS" editable="false" style="-fx-font-family: 'Consolas', monospace;"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="filenameField" promptText="filename.txt"/>
+        <Button text="Save Report" onAction="#saveReport" styleClass="primary-button"/>
+        <Label fx:id="statusLabel"/>
+    </HBox>
+</VBox>
