@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.IrrigationController" prefHeight="700.0" prefWidth="800.0">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Irrigation Dashboard" styleClass="header-label"/>
+    
+    <VBox styleClass="card" spacing="10">
+        <Label text="Global Water Tank Level" styleClass="card-title"/>
+        <Label fx:id="waterLevelLabel" styleClass="card-value"/>
+        <ProgressBar fx:id="waterProgress" prefWidth="400" progress="0.0"/>
+    </VBox>
+
+    <Label text="Zone Irrigation Control" styleClass="section-label"/>
+    <ListView fx:id="zoneIrrigationList" VBox.vgrow="ALWAYS"/>
+</VBox>
