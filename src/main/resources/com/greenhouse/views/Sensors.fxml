@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.SensorsController" prefHeight="700.0" prefWidth="800.0">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Sensors Overview" styleClass="header-label"/>
+    
+    <TableView fx:id="sensorsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+            <TableColumn text="Name" fx:id="colName" prefWidth="150"/>
+            <TableColumn text="Type" fx:id="colType" prefWidth="150"/>
+            <TableColumn text="Zone ID" fx:id="colZone" prefWidth="100"/>
+            <TableColumn text="Current Value" fx:id="colValue" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
