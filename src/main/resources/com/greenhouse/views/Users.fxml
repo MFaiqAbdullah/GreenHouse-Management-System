@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.UsersController" prefHeight="700.0" prefWidth="800.0">
+    <top>
+        <VBox spacing="10.0">
+            <padding><Insets top="20" right="20" bottom="10" left="20"/></padding>
+            <Label text="User Management (Admin Only)" styleClass="header-label"/>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="usersTable">
+            <columns>
+                <TableColumn text="ID" fx:id="colId" prefWidth="50">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Username" fx:id="colUsername" prefWidth="150">
+                    <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Role" fx:id="colRole" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <padding><Insets top="10" right="20" bottom="20" left="20"/></padding>
+            <Button text="Add User" onAction="#handleAdd" styleClass="primary-button"/>
+            <Button text="Delete Selected" onAction="#handleDelete" textFill="RED"/>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox fx:id="formPane" visible="false" managed="false" prefWidth="250" spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Add User" styleClass="section-label"/>
+            <TextField fx:id="fUsername" promptText="Username"/>
+            <PasswordField fx:id="fPassword" promptText="Password"/>
+            <ComboBox fx:id="fRole" promptText="Role"/>
+            <Label fx:id="errorLabel" textFill="RED" visible="false" wrapText="true"/>
+            <HBox spacing="10">
+                <Button text="Save" onAction="#handleSave" styleClass="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
