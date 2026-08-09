@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.greenhouse.controllers.AlertsController" prefHeight="700.0" prefWidth="800.0">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="System Alerts" styleClass="header-label"/>
+    
+    <TableView fx:id="alertsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="colId" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Time" fx:id="colTime" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="timestamp"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Message" fx:id="colMessage" prefWidth="350">
+                <cellValueFactory><PropertyValueFactory property="message"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Severity" fx:id="colSeverity" prefWidth="100"/>
+            <TableColumn text="Status" fx:id="colResolved" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Mark as Resolved" onAction="#handleResolve" styleClass="primary-button"/>
+        <Label fx:id="errorLabel" textFill="RED" visible="false"/>
+    </HBox>
+</VBox>
